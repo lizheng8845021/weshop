@@ -20,7 +20,7 @@ public class WechatWebConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new LoginInterceptor())
-                //.addPathPatterns("/**")//拦截所有的路径
+                .addPathPatterns("/**")//拦截所有的路径
                 .excludePathPatterns(weshopWechatProperties.getLoginInterceptorExcludePath().toArray(new String[]{}));
     }
 }

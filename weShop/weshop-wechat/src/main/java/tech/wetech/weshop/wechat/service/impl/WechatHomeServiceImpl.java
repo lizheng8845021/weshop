@@ -43,11 +43,15 @@ public class WechatHomeServiceImpl implements WechatHomeService {
     @Autowired
     private CategoryApi categoryApi;
 
+
+
     @Override
 //    @Cacheable("index")
     public HomeIndexVO index() {
 
         List<Ad> bannerList = adApi.queryByCriteria(Criteria.of(Ad.class).fields(Ad::getId, Ad::getLink, Ad::getImageUrl).andEqualTo(Ad::getAdPositionId, 1)).getData();
+       // List<Ad> bannerList1 = (List<Ad>) adApi.queryAdList();
+
 
         List<Channel> channelList = channelApi.queryByCriteria(Criteria.of(Channel.class).fields(Channel::getId, Channel::getIconUrl, Channel::getName, Channel::getUrl).sort(Channel::getSortOrder)).getData();
 

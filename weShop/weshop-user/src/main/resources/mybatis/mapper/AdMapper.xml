@@ -15,4 +15,8 @@
         <result column="enabled" property="enabled" jdbcType="TINYINT"/>
         <result column="image_url" property="imageUrl" jdbcType="LONGVARCHAR"/>
     </resultMap>
+
+    <select id="queryAdList" resultType="tech.wetech.weshop.user.po.Ad">
+        select * from weshop_ad
+    </select>
 </mapper>
